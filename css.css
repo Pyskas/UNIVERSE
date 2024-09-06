@@ -1,0 +1,163 @@
+/* fonts
+    font-family: "Rob";
+    font-family: "Lato";
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.wrapper{
+    margin: 0 auto;
+    padding: 0 25px;
+    max-width: 1500px;
+}
+.header_top{
+    display: flex;
+    justify-content: center;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.logo p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #262D33;
+    font-weight: bold;
+}
+.palka{
+    width: 1px;
+    height: 50px;
+    background-color: #D9DADB;
+    margin: 0 25px;
+}
+.search{
+    padding: 0 636px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.search p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #939699;
+    font-weight: 400;
+}
+.subscribe{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 50px 0 0;
+}
+.subscribe p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #262D33;
+    font-weight: bold;
+}
+.subscribe p span{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #939699;
+    font-weight: 400;
+}
+.log{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.log p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #4B5157;
+    font-weight: 400;
+}
+.palka_flex{
+    display: flex;
+    justify-content: center;  
+}
+.palka_big{
+    width: 1140px;
+    height: 1px;
+    background-color: #D9DADB;
+    margin: 0 25px;
+}
+.header_bot{
+    display: flex;
+    
+}
+.svoboda{
+    padding: 0 0 0 213px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.svoboda p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #4B5157;
+    font-weight: 400;
+}
+.universal{
+    display: flex;
+    align-items: center;
+    padding: 0 186px 0 130px ;
+}
+.date{
+    display: flex;
+    align-items: center;
+}
+.date p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #4B5157;
+    font-weight: 400;
+}
+.weather{
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 0 0 0 24px;
+}
+.weather p{
+    font-family: "Lato";
+    font-size: 14px;
+    color: #4B5157;
+    font-weight: 400;
+}
+.category{
+    width: 100%;
+    height: 55px;
+    background-color: #262D33;
+}
+.words{
+    padding: 20px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 46px;
+    
+    font-family: "Lato";
+    font-size: 14px;
+    color: WHITE;
+    font-weight: bold;
+}
+.words a{
+    font-family: "Lato";
+    font-size: 14px;
+    color: WHITE;
+    font-weight: bold;
+}
+.date-box {
+    position: fixed; 
+    top: 10px; 
+    right: 10px; 
+    background-color: black; 
+    color: white; 
+    padding: 5px 10px;
+    border-radius: 5px; 
+}
