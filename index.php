@@ -38,7 +38,6 @@
                 <p>Boston and New York Bear Brunt</p>
             </div>
             <div class="universal"><img src="src/Universal.png" alt=""></div>
-        
             <div class="date-box"> 
                 <?php 
                 $months = [ 
@@ -61,8 +60,7 @@
                 $year = $date->format('Y'); 
                 echo "$day, $month $year"; 
                 ?> 
-            </div>
-        
+            </div> 
             <div class="weather">
                 <img src="src/Sun.png" alt="">
                 <p>- 23 °C</p>
