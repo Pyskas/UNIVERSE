@@ -27,7 +27,7 @@
                 <p>Search</p>
             </div>
             <div class="subscribe">
-                <img src="src/Image.png" alt="">
+                <img src="src/navvv.png" alt="">
                 <p>Subscribe Now <br> <span>3 month for $19</span></p>
             </div>
             <div class="log">
@@ -89,12 +89,53 @@
             </div>
         </div>
     </div>
-        
-    <div class="posts">
+    
+    <div class="back_rec">
         <div class="wrapper">
-            
+              <div class="rec_flex">
+                <div class="rec">
+                    <div class="rec_carts">
+                        <div class="rec_cart">
+                            <p>
+                                25 Songs That Tell <br> 
+                                Us Where Music Is <br>
+                                Going
+                            </p>
+                            <img src="/src/cart_img1.png" alt="">
+                        </div>
+                        <div class="rec_palka"></div>
+                        <div class="rec_cart">
+                            <p>
+                            These Ancient <br> 
+                            Assassins Eat Their <br>
+                            Own Kind
+                            </p>
+                            <img src="/src/cart_img2.png" alt="">
+                        </div>
+                        <div class="rec_palka"></div>
+                        <div class="rec_cart">
+                            <p>
+                            How Do You Teach <br>
+                             People to Love <br>
+                             Difficult Music?
+                            </p>
+                            <img src="/src/cart_img3.png" alt="">
+                        </div>
+                        <div class="rec_palka"></div>
+                        <div class="rec_cart">
+                            <p>
+                            International <br>
+                            Soccer’s <br>
+                            Man of Mystery
+                            </p>
+                            <img src="/src/cart_img4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+              </div>      
         </div>
     </div>
+    
 
 </body>
 </html>
