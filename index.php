@@ -71,7 +71,6 @@
                         <div id="weather"> 
                     <img src="/src/Sun.png" alt="Weather Icon"> --°C 
                 </div>
-                хуй
          </p>
             </div>
         </div>
