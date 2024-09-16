@@ -20,7 +20,7 @@
   <div class="form">
   
     <form method="post" action="/login.php" class="login-form">
-      <input name="login" type="text" placeholder="username"/>
+      <input name="login" type="text" placeholder="login"/>
       <input name="password" type="password" placeholder="password"/>
       <button>login</button>
       <p class="message">Not registered? <a href="/regist.php">Create an account</a></p>

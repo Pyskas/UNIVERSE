@@ -21,8 +21,9 @@
                 <div class="form">
             <form method="post" action="/connect.php" class="register-form">
       <input name="FIO" type="text" placeholder="name"/>
-      <input name="login" type="password" placeholder="password"/>
+      <input name="login" type="text" placeholder="login"/>
       <input name="email" type="text" placeholder="email address"/>
+      <input name="password" type="password" placeholder="password"/>
       <button>create</button>
       <p class="message">Already registered? <a href="/form.php">Sign In</a></p>
     </form>

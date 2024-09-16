@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "connect.php";
+require_once "conectdb.php";
 
 if (isset($_POST['login']) && isset($_POST['password'])){
     $login = $_POST['login'];
