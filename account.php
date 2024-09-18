@@ -1,12 +1,20 @@
 <?php
+session_start();
 require "conectdb.php";
 
-$UserID=$_COOKIE['idUser'];
-$queryUserCheck = mysqli_query($conn, "SELECT * FROM `users` WHERE `id.user`=$UserID"); 
-$user = mysqli_fetch_array($queryUserCheck);
-?>
-<?php
+$UserID = $_SESSION["id"] ?? null;
 
+if ($UserID) {
+    $queryUserCheck = mysqli_query($conn, "SELECT * FROM users WHERE id_user = '$UserID'"); 
+
+    if ($queryUserCheck) {
+        $user = mysqli_fetch_array($queryUserCheck);
+    } else {
+        die("Ошибка выполнения запроса: " . mysqli_error($conn));
+    }
+} else {    
+    die("Пользователь не авторизован.");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +29,27 @@ $user = mysqli_fetch_array($queryUserCheck);
 <body>
 
     <main class="container">
-        
-        <?php (!empty($UserID)):?>
 
-       
-            <h1 class="">Привет, <?=$user["FIO"]?> </h1>
+        <?php if ($user): ?>
+            <h1 class="">Привет, <?= htmlspecialchars($user["FIO"]) ?> </h1>
             <form action="update.php" method="post">
-        <p>ФИО
-            <input type="text" name="FIO" value="<?=$user["FIO"]?>"></p>
-        <p>Логин
-            <input type="text" required name="login" value="<?=$user["login"]?>"></p>
-        <p>Почта
-            <input type="email" name="email" value="<?=$user["email"]?>"></p>
-        <p>Пароль
-            <input type="password" required name="password" value="<?=$user["password"]?>"></p>
-        <input type="submit">
-        </form>
+                <p>ФИО
+                    <input type="text" name="FIO" value="<?= htmlspecialchars($user["FIO"]) ?>"></p>
+                <p>Логин
+                    <input type="text" required name="login" value="<?= htmlspecialchars($user["login"]) ?>"></p>
+                <p>Почта
+                    <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>"></p>
+                <p>Пароль
+                    <input type="password" required name="password"></p> <!-- Уберите value для пароля -->
+                <input type="submit">
+            </form>
 
-        <form action="logout.php" method="post">
-            <input type="submit" value="Выйти из аккаунта">
-        </form>
-        
+            <form action="logout.php" method="post">
+                <input type="submit" value="Выйти из аккаунта">
+            </form>
+        <?php else: ?>
+            <p>Пользователь не найден.</p>
+        <?php endif; ?>
 
     </main>
     

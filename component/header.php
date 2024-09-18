@@ -1,8 +1,21 @@
+<?php
+session_start();
+require_once "conectdb.php";
+if(!empty($_SESSION['UserID'])){
+    require_once "role.php"; 
+};
+?>
 <header class="wrapper">
         <div class="header_top">
             <div class="logo">
                 <img src="src/Hamburger menu.png" alt="">
                 <p>Sections</p>
+                <?php
+                    $roleid = $_COOKIE['roles'] ?? null;    
+                    if( !empty($_COOKIE['UserID']) && $roleid != 2){
+                    echo "<a class='head_link' href='/account.php'>Профиль</a>";
+                    }
+                    ?>
             </div>
             <div class="palka"></div>
             <div class="search">

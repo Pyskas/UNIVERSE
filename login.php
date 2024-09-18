@@ -12,9 +12,9 @@ if (isset($_POST['login']) && isset($_POST['password'])){
         $_SESSION['auth'] = true;
         $_SESSION["login"] = $login;
         $_SESSION["password"] = $password;
-        $_SESSION["id"] = $log["id"];
-        $_SESSION["role_id"] = $log["id_role"];
-        header("Location:index.php");
+        $_SESSION["id"] = $log["id_user"];
+        $_SESSION["role_id"] = $log["role_id"];
+        header("Location:account.php");
     } else {
         echo "Неверно введён псевдоним или пароль!";
     }

@@ -3,7 +3,7 @@ require 'conectdb.php';
 
 if (isset($_POST['blocked'])) {
     $userId = $_POST['blocked'];
-    $updateQuerry = "UPDATE users SET status_id = 2 WHERE `id.user` = $userId";
+    $updateQuerry = "UPDATE users SET status_id = 2 WHERE `id_user` = $userId";
     mysqli_query($conn, $updateQuerry);
     echo"<script>
     alert('Пользователь заблокирован');
@@ -11,7 +11,7 @@ if (isset($_POST['blocked'])) {
   </script>";
 } elseif (isset($_POST['unblocked'])) {
     $userId = $_POST['unblocked'];
-    $updateQuerry = "UPDATE users SET status_id = 1 WHERE `id.user` = $userId";
+    $updateQuerry = "UPDATE users SET status_id = 1 WHERE `id_user` = $userId";
     mysqli_query($conn, $updateQuerry);
     echo"<script>
          alert('Пользователь разблокирован');
