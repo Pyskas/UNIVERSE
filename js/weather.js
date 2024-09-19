@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () { 
-    const apiKey = '27eeb0d1b927855a904250420f895aec'; // Вставьте ваш ключ OpenWeather 
-    const city = 'Ufa'; // Можно изменить на любой город 
+    const apiKey = 'c2f422042d76c9b7ca5e7c9ecf92b394'; // Вставьте ваш ключ OpenWeather 
+    const city = '479561'; // Можно изменить на любой город 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`; 
  
     // Запрос данных о погоде 

@@ -4,7 +4,7 @@ $login = trim($_POST['login']);
 $password = trim($_POST['password']);
 $queryUser = mysqli_query($conn, "SELECT * FROM users INNER JOIN statuses on users.status_id=statuses.status_id INNER JOIN roles on users.role_id=roles.role_id WHERE login='$login' AND password='$password'"); 
 $user = mysqli_fetch_array($queryUser);
-$idUser = $user["id.user"];
+$idUser = $user["id_user"];
 $role = $user['role_id'];
 if(!empty($idUser)) {
     if ($user["status_name"] == 'Заблокирован') {
