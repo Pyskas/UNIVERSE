@@ -43,13 +43,28 @@ if ($UserID) {
                 <p>Почта
                     <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>"></p>
                 <p>Пароль
-                    <input type="password" required name="password"></p> <!-- Уберите value для пароля -->
+                    <input type="password" required name="password"></p>
                 <input type="submit">
             </form>
 
             <form action="logout.php" method="post">
                 <input type="submit" value="Выйти из аккаунта">
             </form>
+            <form class="" action="addpost.php" method="POST">
+                    <div class="modal-body">
+                        <p>Название поста: 
+                            <input type="text" name="title"></p>
+                        <p>Текст: 
+                            <input type="text" name="text"></p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                        <button class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
         <?php else: ?>
             <p>Пользователь не найден.</p>
         <?php endif; ?>

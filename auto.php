@@ -24,7 +24,7 @@ if(!empty($idUser)) {
     }
 } else {
     echo "<script>alert('Данный пользователь не найден!');
-    location.href='autorization.php';
+    location.href='registr.php';
     </script>";
 }
 
