@@ -21,13 +21,16 @@ if ($UserID) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/css.css">
+    <link rel="stylesheet" href="/css/container.css">
+  
     <title>Личный кабинет</title>
 </head>
 <body>
+<?php 
+    include "component/header.php"
 
+?>
     <main class="container">
 
         <?php if ($user): ?>
@@ -40,18 +43,37 @@ if ($UserID) {
                 <p>Почта
                     <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>"></p>
                 <p>Пароль
-                    <input type="password" required name="password"></p> <!-- Уберите value для пароля -->
+                    <input type="password" required name="password"></p>
                 <input type="submit">
             </form>
 
             <form action="logout.php" method="post">
                 <input type="submit" value="Выйти из аккаунта">
             </form>
+            <form class="" action="addpost.php" method="POST">
+                    <div class="modal-body">
+                        <p>Название поста: 
+                            <input type="text" name="title"></p>
+                        <p>Текст: 
+                            <input type="text" name="text"></p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                        <button class="btn btn-primary">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
         <?php else: ?>
             <p>Пользователь не найден.</p>
         <?php endif; ?>
 
     </main>
-    
+    <section class="add">
+        <div class="container">
+            <div class="add_wrapp"></div>
+        </div>
+    </section>
 </body>
 </html>
