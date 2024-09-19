@@ -16,7 +16,7 @@ if (isset($_POST["FIO"]) && isset($_POST["login"]) && isset($_POST["email"]) && 
         {
             $_SESSION['id'] = $conn->insert_id;
             $_SESSION['role_id'] = 1;
-            header('Location:index.php');
+            header('Location:account.php');
         } else
         {
             echo "Ошибка: " . $conn->error;
