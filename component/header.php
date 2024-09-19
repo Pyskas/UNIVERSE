@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "conectdb.php";
-
 ?>
 <header class="wrapper">
         <div class="header_top">
@@ -61,13 +60,10 @@ require_once "conectdb.php";
                 echo "$day, $month $year"; 
                 ?> 
             </div> 
-            <div class="weather">
-            <p class="">
-                        <script src="/js/weather.js"></script>
-                        <div id="weather"> 
-                    <img src="/src/Sun.png" alt="Weather Icon"> --°C 
+              
+            <div class="weather" id="weather"> 
+            <script src="/js/weather.js"></script> 
                 </div>
-         </p>
-            </div>
+                </div>
         </div>
     </header>

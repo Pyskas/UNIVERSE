@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () { 
-    const apiKey = 'c2f422042d76c9b7ca5e7c9ecf92b394'; // Вставьте ваш ключ OpenWeather 
-    const city = '479561'; // Можно изменить на любой город 
+    const apiKey = 'a650f5ac459e809e186af311e9ea33d9'; // Вставьте ваш ключ OpenWeather 
+    const city = 'Ufa'; // Можно изменить на любой город 
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`; 
  
     // Запрос данных о погоде 
@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => { 
             const temperature = data.main.temp; 
             const weatherElement = document.getElementById('weather'); 
-            const weatherIcon = '<img src="/img/Sun.png" alt="Sun Icon" width="15" height="15">';  // Выводим иконку и температуру 
+ 
+            // Используем локальную иконку Sun.svg для отображения погоды 
+            const weatherIcon = '<img src="/src/Sun.png" alt="Sun Icon" width="15" height="15">'; 
+ 
+            // Выводим иконку и температуру 
             weatherElement.innerHTML = `${weatherIcon} ${temperature}°C`; 
         }) 
         .catch(error => { 
