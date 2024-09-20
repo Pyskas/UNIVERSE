@@ -50,7 +50,7 @@ if ($UserID) {
             <form action="logout.php" method="post">
                 <input type="submit" value="Выйти из аккаунта">
             </form>
-            <form class="" action="addpost.php" method="POST">
+            <form action="addpost.php" method="POST">
                     <div class="modal-body">
                         <p>Название поста: 
                             <input type="text" name="title"></p>
@@ -58,7 +58,6 @@ if ($UserID) {
                             <input type="text" name="text"></p>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
                         <button class="btn btn-primary">Добавить</button>
                     </div>
                 </form>
