@@ -50,15 +50,16 @@ if ($UserID) {
             <form action="logout.php" method="post">
                 <input type="submit" value="Выйти из аккаунта">
             </form>
-            <form action="addpost.php" method="POST">
+            <form action="addpost.php" method="post">
                     <div class="modal-body">
                         <p>Название поста: 
                             <input type="text" name="title"></p>
                         <p>Текст: 
                             <input type="text" name="text"></p>
+                            
 
                     <div class="modal-footer">
-                        <button class="btn btn-primary">Добавить</button>
+                        <input type="submit" class="btn btn-primary" value="Добавить">
                     </div>
                 </form>
             </div>

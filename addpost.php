@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 if (!empty($_POST["title"]) && !empty($_POST["text"]) && !empty($_POST["category_id"]) && !empty($_POST["status_id"]) && !empty($_POST["id_post"]) && !empty($_POST["id_user"])) {
       
     require_once "conectdb.php";
@@ -10,7 +10,7 @@ if (!empty($_POST["title"]) && !empty($_POST["text"]) && !empty($_POST["category
     $id_post = $conn->real_escape_string($_POST["id_post"]);
     $id_user = $conn->real_escape_string($_POST["id_user"]);
 
-    $newproduct = mysqli_query($conn, "INSERT INTO post(title, text, category_id, statusnews_id, id_post, id_user) VALUES ('$namepost', '$text', '$category_id', '$status_id', '$id_post', '$id_user')");
+    $newproduct = mysqli_query($conn, "INSERT INTO post(id_user, id_post,statusnews_id, category_id, title, text, ) VALUES ('$id_user', '$id_post', '$category_id', '$text', '$namepost')");
     
     if ($newproduct) {
         echo "<script>
@@ -29,4 +29,24 @@ if (!empty($_POST["title"]) && !empty($_POST["text"]) && !empty($_POST["category
     location.href='adminProduct.php';
     </script>";
 }
-?>
+?> -->
+<?php
+
+require_once "conectdb.php";
+if (!empty($_POST["title"]) && !empty($_POST["text"])) {
+      
+    
+  
+    $namepost = $conn->real_escape_string($_POST["title"]);
+    $text = $conn->real_escape_string($_POST["text"]);
+//     $category_id = $conn->real_escape_string($_POST["category_id"]);
+//     $status_id = $conn->real_escape_string($_POST["status_id"]);
+//     $id_post = $conn->real_escape_string($_POST["id_post"]);
+//     $id_user = $conn->real_escape_string($_POST["id_user"]);
+    $newproduct = mysqli_query($conn, "INSERT INTO `post`(`id_user`, `category_id`, `statusnews_id`, `title`, `text`) VALUES (null,null,null,'$namepost', '$text')");
+    if($newproduct){
+      echo "Ok";
+    }
+    
+    
+}
