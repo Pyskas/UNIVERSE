@@ -62,7 +62,7 @@ require_once "conectdb.php";
             </div> 
               
             <div class="weather" id="weather"> 
-            <script src="/js/weather.js"></script> 
+            <script src="js/weather.js"></script> 
                 </div>
                 </div>
         </div>

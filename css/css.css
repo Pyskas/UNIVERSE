@@ -11,8 +11,8 @@ a{
 }
 .wrapper{
     margin: 0 auto;
-    padding: 0 25px;
-    max-width: 1500px;
+    padding: 0 auto;
+    max-width: 1366px;
 }
 /* header  */
 .header_top{
@@ -197,18 +197,17 @@ a{
 .all-carts{
     margin-top: 30px;
     display: flex;
-    justify-content: center;
 }
 .cart1{
     width: 555px;
     height: 370px;
-    background-color: black;
+    background-color: rgb(134, 87, 87);
     border-radius: 12px;
 }
 .cart2{
     width: 263px;
     height: 370px;
-    background-color: black;
+    background-color: rgb(182, 112, 112);
     border-radius: 12px;
 }
 .carts1-2{
@@ -219,27 +218,26 @@ a{
     margin: 0 0 0 30px;
     width: 263px;
     height: 770px;
-    background-color: black;
+    background-color: rgb(129, 71, 71);
     border-radius: 12px;
 }
 .cart-flex{
-    display: flex;
+    display: grid;
+    grid-template-columns: 555px  263px 263px;
+    grid-template-rows:  15rem 30vh;
 }
 .cart3{
     margin: 30px 30px 0 0;
     width: 263px;
     height: 370px;
-    background-color: black;
+    background-color: rgb(198, 185, 185);
     border-radius: 12px;
-}
-.cart4-7{
-    display: flex;
 }
 .cart4{
     margin: 30px 30px 0 0;
     width: 263px;
     height: 170px;
-    background-color: black;
+    background-color: rgb(177, 128, 128);
     border-radius: 12px;
 }
 /* lotus  */
