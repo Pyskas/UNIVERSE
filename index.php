@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once "conectdb.php";
+$result = $conn->query("SELECT * FROM posts ORDER BY created_at DESC");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
