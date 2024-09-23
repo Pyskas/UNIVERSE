@@ -90,15 +90,7 @@
                     <div class="carts1-2">
                    
                         <div class="cart1">
-                        <?php 
-require_once "conectdb.php";
-                $sql = mysqli_query($conn, "SELECT * FROM post");
-                $sql = mysqli_fetch_all($sql);
-                foreach($sql as $row){
-
-       
-                    ?>
-                        <p><?=$row[4]?></p>
+                        <p></p>
                         </div>
                         <div class="cart2">
 
@@ -106,11 +98,9 @@ require_once "conectdb.php";
                     </div>
                     <div class="cart-flex">
                         <div class="cart3">
-                        <?=$row[4]?></p>
                         </div>
                         <div class="cart4-5">
                             <div class="cart4">
-                            <?=$row[4]?></p>
                             </div>
                             <div class="cart4">
                                 
@@ -126,9 +116,6 @@ require_once "conectdb.php";
                       
                         </div>                
                     </div>
-                    <?php
-                         }
-                ?>
                 </div>
              
                 <div class="comments">
