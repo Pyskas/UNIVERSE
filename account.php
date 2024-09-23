@@ -65,15 +65,28 @@ if ($UserID) {
                             <p>Текст: <br>
                                 <!-- <input type="text" name="text"></p> -->
                                 <label for="story"></label>
-                                <textarea class="text_area" id="story" name="title" rows="5" cols="33"></textarea>
-                                <select>
-                                    <option value=""></option>
-                                </select>
+                                <textarea class="text_area" id="story" name="text" rows="5" cols="33"></textarea>
+                                <select name="category_id">
+                                    <?php 
+                                    $sql = mysqli_query($conn, "SELECT * FROM category");
+                                    $sql = mysqli_fetch_all($sql);
+                                    foreach($sql as $row){
 
+                              
+                                    ?>
+
+                                    <option  value="<?=$row[0]?>"><?=$row[1]?></option>
+                                    <?php 
+
+}
+                                    
+?>
+                                </select>
                         <div class="modal-footer">
-                            <button class="btn btn-primary">Добавить</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+               
                         </div>
+                        <button class="btn btn-primary">Добавить</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
                     </form>
                 </div>
                 
