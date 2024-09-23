@@ -23,7 +23,7 @@ if ($UserID) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/css.css">
     <link rel="stylesheet" href="/css/container.css">
-  
+    <link rel="stylesheet" href="/css/account.css">
     <title>Личный кабинет</title>
 </head>
 <body>
@@ -31,45 +31,58 @@ if ($UserID) {
     include "component/header.php"
 
 ?>
-    <main class="container">
+    <div class="container">
+        <main>
+        
+            <?php if ($user): ?>
+                
+                <div class="form">
+                    <form action="update.php" method="post">
+                        <h1 class="">Привет, <?= htmlspecialchars($user["FIO"]) ?> </h1>
+                        <p>ФИО
+                            <input type="text" name="FIO" value="<?= htmlspecialchars($user["FIO"]) ?>"></p>
+                        <p>Логин
+                            <input type="text" required name="login" value="<?= htmlspecialchars($user["login"]) ?>"></p>
+                        <p>Почта
+                            <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>"></p>
+                        <p>Пароль
+                            <input class="input1" type="password" required name="password"></p>
+                        <!-- <input class="input2" type="submit"> -->
+                         <button class="input2">Отправить</button>
+                    </form>
 
-        <?php if ($user): ?>
-            <h1 class="">Привет, <?= htmlspecialchars($user["FIO"]) ?> </h1>
-            <form action="update.php" method="post">
-                <p>ФИО
-                    <input type="text" name="FIO" value="<?= htmlspecialchars($user["FIO"]) ?>"></p>
-                <p>Логин
-                    <input type="text" required name="login" value="<?= htmlspecialchars($user["login"]) ?>"></p>
-                <p>Почта
-                    <input type="email" name="email" value="<?= htmlspecialchars($user["email"]) ?>"></p>
-                <p>Пароль
-                    <input type="password" required name="password"></p>
-                <input type="submit">
-            </form>
+                    <form action="logOut.php" method="post">
+                            <!-- <input class="input2" type="submit" value="Выйти из аккаунта"> -->
+                            <button class="input2">Выйти из аккаунта</button>
+                    </form>
+                </div>  
 
-            <form action="logout.php" method="post">
-                <input type="submit" value="Выйти из аккаунта">
-            </form>
-            <form action="addpost.php" method="post">
-                    <div class="modal-body">
-                        <p>Название поста: 
-                            <input type="text" name="title"></p>
-                        <p>Текст: 
-                            <input type="text" name="text"></p>
-                            
+                <div class="create_post">
+                    <form class="" action="addpost.php" method="POST">
+                        <div class="modal-body">
+                            <p>Название поста: 
+                                <input type="text" name="title"></p>
+                            <p>Текст: <br>
+                                <!-- <input type="text" name="text"></p> -->
+                                <label for="story"></label>
+                                <textarea class="text_area" id="story" name="title" rows="5" cols="33"></textarea>
+                                <select>
+                                    <option value=""></option>
+                                </select>
 
-                    <div class="modal-footer">
-                        <input type="submit" class="btn btn-primary" value="Добавить">
-                    </div>
-                </form>
-            </div>
-        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">Добавить</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отменить</button>
+                        </div>
+                    </form>
+                </div>
+                
+            <?php else: ?>
+                <p>Пользователь не найден.</p>
+            <?php endif; ?>
+
+        </main>
     </div>
-        <?php else: ?>
-            <p>Пользователь не найден.</p>
-        <?php endif; ?>
-
-    </main>
     <section class="add">
         <div class="container">
             <div class="add_wrapp"></div>
