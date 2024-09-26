@@ -1,7 +1,9 @@
 <?php
-    $UserID=$_POST['id_user'];
-    require_once "conectdb.php";
-    $queryUserCheck = mysqli_query($conn, "SELECT * FROM `users` WHERE `id_user`=$UserID"); 
+session_start();
+require_once "conectdb.php";
+$UserID = $_SESSION['id'];
+
+    $queryUserCheck = mysqli_query($conn, "SELECT * FROM `users` WHERE `id_user`='$UserID'"); 
     $user = mysqli_fetch_array($queryUserCheck);
 
     $FIO = $_POST["FIO"];
@@ -9,7 +11,7 @@
     $email = $_POST["email"];
     $password = $_POST["password"]; 
     
-    $sql="UPDATE `users` SET `FIO`='$FIO',`login`='$login',`email`='$email',`password`='$password' WHERE `id_user`=$UserID";
+    $sql="UPDATE `users` SET `email`='$email', `FIO`='$FIO',`login`='$login',`password`='$password' WHERE `id_user`='$UserID'";
     if($conn->query($sql)){
         header('Location:account.php');
     } else{

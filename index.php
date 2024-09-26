@@ -86,7 +86,14 @@
         <div class="wrapper">
             <div class="all-carts">
                 <div class="cart-flex1">
-              
+              <?php 
+        //       require_once "conectdb.php";
+        // $sql = mysqli_query($conn, "SELECT * FROM post");
+        // $sql = mysqli_fetch_all($sql);
+        // foreach($sql as $row){
+
+       
+              ?>
                     <div class="carts1-2">
                    
                         <div class="cart1">
@@ -113,7 +120,8 @@
                             <div class="cart4">
                                 
                             </div>
-                      
+                      <?php 
+                    //    }    ?>
                         </div>                
                     </div>
                 </div>

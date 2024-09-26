@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const weatherElement = document.getElementById('weather'); 
  
             // Используем локальную иконку Sun.svg для отображения погоды 
-            const weatherIcon = '<img src="/src/Sun.png" alt="Sun Icon" width="15" height="15">'; 
+            const weatherIcon = '<img src="src/Sun.png" alt="Sun Icon" width="15" height="15">'; 
  
             // Выводим иконку и температуру 
             weatherElement.innerHTML = `${weatherIcon} ${temperature}°C`; 
