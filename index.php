@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "conectdb.php";
-$sql = "SELECT * FROM post";
+$sql = "SELECT * FROM post LIMIT 12" ;
 $result = $conn->query($sql);
 
 // $topCommentsSQL = "SELECT c.id_category, c.name_category, COUNT(cm.id_comment) AS comment_count
@@ -13,7 +13,6 @@ $result = $conn->query($sql);
 //         LIMIT 5";
 // $topCategoriesResult = $conn->query($topCommentsSQL);
 
-?>
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +98,7 @@ $result = $conn->query($sql);
                 </div>
               </div>      
         </div>
-
+<div class="back_top_lotus"></div>
         <div class="wrapper">
             <div class="all-carts">
                 <div class="cart-flex1">
@@ -117,14 +116,16 @@ $result = $conn->query($sql);
                     }
 
                     ?>
-                <div class="comments">
+                <!-- <div class="comments">
 
-                </div>
+                </div> -->
             </div>
         </div>
 
     </div>
         
+    
+
     <div class="back_lotus">
         <div class="wrapper">
             <div class="lotus_main">

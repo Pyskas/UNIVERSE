@@ -221,17 +221,40 @@ a{
     background-color: rgb(129, 71, 71);
     border-radius: 12px;
 }
-.cart-flex{
-    display: grid;
-    grid-template-columns: 555px  263px 263px;
-    grid-template-rows:  15rem 30vh;
-}
 .cart3{
-    margin: 30px 30px 0 0;
-    width: 263px;
-    height: 370px;
-    background-color: rgb(198, 185, 185);
+    width: 100%;
+    height: 100%;
+    background-color: white;
     border-radius: 12px;
+}
+.cart3 h3{
+    padding: 25px 0 0 25px;
+    font-family: Roboto Slab;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+}
+.cart3 p{
+    padding: 0 0 0 25px;
+    font-family: Roboto Slab;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left; 
+}
+.cart3 a{
+    padding: 0 0 0 25px;
+    font-family: Roboto Slab;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: left;
+    color: #939699;
+}
+.cart3 a:hover{
+    transition: 0.3s;
+    color: blue;
 }
 .cart4{
     margin: 30px 30px 0 0;
@@ -240,9 +263,17 @@ a{
     background-color: rgb(177, 128, 128);
     border-radius: 12px;
 }
+.back_top_lotus{
+    position: absolute;
+    top: 660px;
+    z-index: -99;
+    width: 100%;
+    height: 500px;
+    background-color: #EDEFF0;
+}
 /* lotus  */
 .back_lotus{
-    margin-top: 500px;
+    margin-top: 60px;
     width: 100%;
     height: 270px;
     background: url(/src/lotus.png);
@@ -783,4 +814,16 @@ footer h1{
     line-height: 20px;
     text-align: left;
     color: #939699;
+}
+.all-carts{
+    display: flex;
+    justify-content: center;
+}
+.cart-flex1{
+        display: grid;
+        gap: 30px;
+        /* Будет создано 3 колонки */
+        grid-template-columns: 263px 263px 263px 263px;
+        /* Будет создано 3 ряда */
+        grid-template-rows: 170px 170px 170px;
 }
