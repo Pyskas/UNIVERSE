@@ -1,3 +1,20 @@
+<?php
+session_start();
+require_once "conectdb.php";
+$sql = "SELECT * FROM post";
+$result = $conn->query($sql);
+
+// $topCommentsSQL = "SELECT c.id_category, c.name_category, COUNT(cm.id_comment) AS comment_count
+//         FROM News n
+//         LEFT JOIN Comments cm ON n.id = cm.id_news
+//         LEFT JOIN Categories c ON n.id_category = c.id_category
+//         GROUP BY c.id_category
+//         ORDER BY comment_count DESC
+//         LIMIT 5";
+// $topCategoriesResult = $conn->query($topCommentsSQL);
+
+?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,46 +103,20 @@
         <div class="wrapper">
             <div class="all-carts">
                 <div class="cart-flex1">
-              <?php 
-        //       require_once "conectdb.php";
-        // $sql = mysqli_query($conn, "SELECT * FROM post");
-        // $sql = mysqli_fetch_all($sql);
-        // foreach($sql as $row){
+                <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<div class='cart3'>";
+                            echo "<h3>" . $row["title"] . "</h3>";
+                            echo "<p class='description'>" . $row["text"] . "</p>";
+                            echo "<a class='show-more' href='post.php?id=" . $row["id_post"] . "'>Подробнее</a>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "Новостей не найдено.";
+                    }
 
-       
-              ?>
-                    <div class="carts1-2">
-                   
-                        <div class="cart1">
-                        <p></p>
-                        </div>
-                        <div class="cart2">
-
-                        </div>
-                    </div>
-                    <div class="cart-flex">
-                        <div class="cart3">
-                        </div>
-                        <div class="cart4-5">
-                            <div class="cart4">
-                            </div>
-                            <div class="cart4">
-                                
-                            </div>
-                        </div>
-                        <div class="div cart4-5">
-                            <div class="cart4">
-                                
-                            </div>
-                            <div class="cart4">
-                                
-                            </div>
-                      <?php 
-                    //    }    ?>
-                        </div>                
-                    </div>
-                </div>
-             
+                    ?>
                 <div class="comments">
 
                 </div>
