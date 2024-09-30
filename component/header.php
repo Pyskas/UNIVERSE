@@ -59,11 +59,12 @@ require_once "conectdb.php";
                 $year = $date->format('Y'); 
                 echo "$day, $month $year"; 
                 ?> 
-            </div> 
-              
-            <div class="weather" id="weather"> 
+                   <div class="weather" id="weather"> 
             <script src="js/weather.js"></script> 
                 </div>
+            </div> 
+              
+         
                 </div>
         </div>
     </header>

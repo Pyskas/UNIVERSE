@@ -82,7 +82,7 @@ a{
     justify-content: center;  
 }
 .palka_big{
-    width: 1140px;
+    width: 1366px;
     height: 1px;
     background-color: #D9DADB;
     margin: 0 25px;
@@ -90,12 +90,11 @@ a{
 /* header bottom */
 .header_bot{
     display: flex;
+    justify-content: space-evenly;
 }
 .svoboda{
-    padding: 0 0 0 213px;
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 .svoboda p{
     font-family: "Lato";
