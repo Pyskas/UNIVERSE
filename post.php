@@ -17,9 +17,19 @@
    include "component/header.php";
    ?>
    <section>
-    <form method="post" action="comment.php">
+    <form method="POST" >
         <input type="text" name="comment" id="">
         <input type="submit">
+        <?php 
+session_start();
+require_once "conectdb.php";
+$text = $_POST['comment'];
+$postid = $_GET['id'];
+$userid = $_SESSION['id'];
+print_r($_GET);
+$sql = mysqli_query($conn, "INSERT INTO `coment` (`com_text`, `user_id`, `post_id`) VALUES ('$text', '$userid', '$postid')") ;
+
+?>
     </form>
    </section>
 </body>
