@@ -17,20 +17,29 @@
    include "component/header.php";
    ?>
    <section>
-    <form method="POST" >
-        <input type="text" name="comment" id="">
+    <form method="POST" action="/comment.php">
+        <input type="text" name="comm" id="">
+        <input type="hidden" name="id" value="<?=$_GET['id']?>">
         <input type="submit">
-        <?php 
-session_start();
-require_once "conectdb.php";
-$text = $_POST['comment'];
-$postid = $_GET['id'];
-$userid = $_SESSION['id'];
-print_r($_GET);
-$sql = mysqli_query($conn, "INSERT INTO `coment` (`com_text`, `user_id`, `post_id`) VALUES ('$text', '$userid', '$postid')") ;
-
-?>
     </form>
+   </section>
+   <section>
+    <?php
+require_once "conectdb.php";
+    
+    session_start();
+    $user = $_GET['id']; 
+            $sql = mysqli_query($conn, "SELECT * FROM comment INNER JOIN users ON users.id_user =  comment.id_user WHERE id_post = '$user' ");
+            $sql = mysqli_fetch_all($sql);
+            foreach($sql as $row){
+
+
+    
+    ?>
+<p><?=$row[0]?></p>
+<?php 
+             }
+?>
    </section>
 </body>
 </html>

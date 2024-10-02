@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "conectdb.php";
-$sql = "SELECT * FROM post LIMIT 12" ;
+$sql = "SELECT * FROM post LIMIT 8" ;
 $result = $conn->query($sql);
 
 // $topCommentsSQL = "SELECT c.id_category, c.name_category, COUNT(cm.id_comment) AS comment_count
