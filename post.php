@@ -15,6 +15,7 @@
         
    <?php 
    include "component/header.php";
+   require_once "conectdb.php";
    ?>
    <section>
     <form method="POST" action="/comment.php">
@@ -24,11 +25,30 @@
     </form>
    </section>
    <section>
+    <?php 
+    $user = intval($_GET['id']); // Приводим к целому числу для безопасности
+    $sql2 = mysqli_query($conn, "SELECT * FROM post  WHERE id_post = '$user'");
+    
+    if ($sql2) {
+        while ($rr = mysqli_fetch_assoc($sql2)) {
+            // Выводим данные
+            ?>
+            <p><?= htmlspecialchars($rr['title']) ?></p> 
+            <p><?= htmlspecialchars($rr['text']) ?></p> 
+            <?php 
+        }
+    } else {
+        echo "Ошибка выполнения запроса: " . mysqli_error($conn);
+    }
+    ?>
+</section>
+
+   <section>
     <?php
-require_once "conectdb.php";
+
     
     session_start();
-    $user = $_GET['id']; 
+   
             $sql = mysqli_query($conn, "SELECT * FROM comment INNER JOIN users ON users.id_user =  comment.id_user WHERE id_post = '$user' ");
             $sql = mysqli_fetch_all($sql);
             foreach($sql as $row){
