@@ -24,6 +24,8 @@ if ($UserID) {
     <link rel="stylesheet" href="/css/css.css">
     <link rel="stylesheet" href="/css/container.css">
     <link rel="stylesheet" href="/css/account.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <title>Личный кабинет</title>
 </head>
 <body>
@@ -96,10 +98,17 @@ if ($UserID) {
 
         </main>
     </div>
-    <section class="add">
-        <div class="container">
-            <div class="add_wrapp"></div>
-        </div>
+    <section class="post_history">
+            <?php 
+$userid = $_SESSION['id'];
+            $sql4 = mysqli_query($conn, "SELECT * FROM post WHERE id_user = '$userid'");
+            $sql4 = mysqli_fetch_all($sql4);
+            foreach($sql4 as $ff){
+
+              ?>
+<p><?=$ff[4]?></p>
+              <?php 
+              }?>
     </section>
 </body>
 </html>

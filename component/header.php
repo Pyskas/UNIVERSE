@@ -23,7 +23,7 @@ require_once "conectdb.php";
            
                 <?php
                     if( !empty($_SESSION['id'])){
-                    echo "<a class='head_link' href='/account.php'>Профиль</a>";
+                    echo "<a class='head_link' href='/account.php?id=" . $_SESSION['id'] . "'>Профиль</a>";
                     }else{
                         echo "<a href='/form.php'>Sign up</a>";
                     }
